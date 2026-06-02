@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pantalla de entrada -->
+  <div id="pantalla-entrada">
+    <img src="PLANTILLA_BANDERA_DEGREE [Recuperado]_PLANTILLA_BANDERA copia 10.png" alt="Términos y Condiciones">
+    <!--<p>Pega cualquier texto de términos y condiciones.<br>
+       El sistema detectará automáticamente las cláusulas que restringen tu agencia como usuario.</p> -->
+    <textarea id="texto-entrada" placeholder="Pega aquí los términos y condiciones..."></textarea>
+    <button id="btn-analizar">Analizar</button>
+  </div>
+
+  <!-- Pantalla principal (oculta hasta analizar) -->
+  <div id="pantalla-principal"></div>
+
+  <!-- Botones fijos (ocultos hasta analizar) -->
+  <button id="btn-aceptar" style="display:none;">Aceptar</button>
+  <button id="btn-rechazar" style="display:none;">Rechazar</button>
+  <button id="btn-volver" style="display:none;">Volver</button>
+
+  <script src="sketch.js"></script>
+</body>
+</html>

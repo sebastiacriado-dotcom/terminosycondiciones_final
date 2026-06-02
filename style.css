@@ -1,0 +1,303 @@
+/* ── BASE ── */
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: serif;
+  min-height: 100%;
+}
+#pantalla-principal {
+  overflow-x: hidden;
+}
+canvas { display: block; }
+
+/* ── COMPARTIDO: tipografía base ── */
+h1 {
+  font-family: serif;
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
+}
+
+.h1entrada {
+  color: white;
+  font-family: serif;
+  font-size: 10vw;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
+}
+
+p, textarea, button {
+  font-family: serif;
+  font-size: min(4.5vw, 22px);
+}
+
+/* ── PANTALLA ENTRADA ── */
+#pantalla-entrada {
+  background: #afafaf;
+  color: white;
+  padding: 8px;
+  /* background-image: url('original_2226b1f5c8f6bfab85786b04b89881cb.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 200vh;
+  display: block;*/
+}
+
+img {
+  display: block;
+  width: 500px;
+  height: auto;
+  position: sticky;
+  top: 20px;
+  margin-bottom: 12px;
+  margin-top: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  transform: rotate(-3deg);
+  transform-origin: center top;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.70);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+#pantalla-entrada p {
+  margin: 12px 8px;
+  line-height: 1;
+  font-size: min(4.5vw, 22px);
+  font-style: italic;
+}
+
+#texto-entrada {
+  display: block;
+  width: min(300px, calc(100vw - 16px));
+  min-height: 700px;
+  padding: 8px;
+  font-size: min(4.5vw, 22px);
+  line-height: 1;
+  border: 1px solid black;
+  background: rgb(255, 255, 255);
+  color: black;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 12px;
+  margin-top: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 150px;
+  z-index: 10;
+  transform: rotate(2deg);
+  transform-origin: center top;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.70);
+}
+
+#btn-analizar {
+  font-size: min(4.5vw, 22px);
+  padding: 0;
+  width: 90px;
+  height: 32px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  left: 20vw;
+  margin-top: 500px auto 0 auto;
+  margin-bottom: 50vh;
+  z-index: 11;
+  transform: rotate(-2deg);
+  transform-origin: center top;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.70);
+}
+#btn-analizar:hover { opacity: 0.5; }
+
+/* ── PANTALLA PRINCIPAL ── */
+#pantalla-principal {      
+  display: none; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.padding {
+  padding: 8px;
+}
+
+/* ── BOTONES FIJOS ── */
+#btn-aceptar {
+  position: fixed;
+  top: 70px;
+  left: 8px;
+  width: 90px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+#btn-rechazar {
+  position: fixed;
+  top: 70px;
+  left: 104px;
+  width: 90px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid white;
+  background: white;
+  color: black;
+  mix-blend-mode: difference;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+#btn-volver {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 90px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+#btn-analizar:hover { opacity: 0.5; }
+/* hover de rechazar: solo cuando NO está en hover de aceptar */
+#btn-rechazar:hover { opacity: 0; }
+/* cuando aceptar está activo, rechazar no desaparece al pasar por encima */
+body.aceptar-activo #btn-rechazar:hover { opacity: 1; }
+#btn-volver:hover { opacity: 0.7; }
+
+#pantalla-principal p {
+  display: block;
+  font-size: min(4.5vw, 18px);
+  line-height: 16px;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  width: calc(100% - 16px);
+  max-width: calc(100% - 16px);
+  margin: 120px 0 0 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#pantalla-principal p span {
+  display: inline;
+  line-height: inherit;
+}
+
+/* ── RESPONSIVE: móvil ── */
+@media (max-width: 600px) {
+  .h1entrada {
+    font-size: 14vw;
+    line-height: 1;
+  }
+
+  img {
+    width: min(500px, 80vw);
+    margin-top: 30vh;
+    transform: rotate(-2deg);
+  }
+
+  p,
+  textarea,
+  button,
+  #pantalla-principal p {
+    font-size: min(6vw, 22px);
+    line-height: 20px;
+  }
+
+  #texto-entrada {
+    width: min(300px, calc(100vw - 24px));
+    min-height: calc(100vh - 180px);
+    height: auto;
+    margin-top: 1000px;
+    top: 220px;
+    transform: rotate(1deg);
+  }
+
+  #btn-analizar {
+    width: min(160px, 90vw);
+    height: 44px;
+    font-size: min(5vw, 20px);
+    margin-top: 24px;
+    margin-bottom: 200px;
+    top: 0;    
+    left: 10vw;
+    transform: rotate(-1deg);
+  }
+
+  #btn-aceptar,
+  #btn-rechazar,
+  #btn-volver {
+    width: 80px;
+    font-size: 14px;
+    bottom: 12px;
+    top: auto;
+  }
+
+  #btn-aceptar { left: 8px; }
+  #btn-rechazar { left: 96px; }
+  #btn-volver { right: 8px; }
+
+
+
+  #pantalla-entrada {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1entrada {
+    font-size: 16vw;
+    line-height: 1;
+  }
+
+  img {
+    width: min(260px, 90vw);
+    margin-top: 18vh;
+  }
+
+  p,
+  textarea,
+  button,
+  #pantalla-principal p {
+    font-size: min(7vw, 24px);
+    line-height: 24px;
+  }
+
+  #texto-entrada {
+    min-height: calc(100vh - 160px);
+    height: auto;
+    margin-top: 180px;
+  }
+
+  #btn-analizar {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #btn-aceptar,
+  #btn-rechazar,
+  #btn-volver {
+    width: 70px;
+    height: 34px;
+    font-size: 13px;
+  }
+}
+
