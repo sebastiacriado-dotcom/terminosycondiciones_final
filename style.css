@@ -175,10 +175,7 @@ img {
   z-index: 10;
 }
 #btn-analizar:hover { opacity: 0.5; }
-/* hover de rechazar: solo cuando NO está en hover de aceptar */
 #btn-rechazar:hover { opacity: 0; }
-/* cuando aceptar está activo, rechazar no desaparece al pasar por encima */
-body.aceptar-activo #btn-rechazar:hover { opacity: 1; }
 #btn-volver:hover { opacity: 0.7; }
 
 #pantalla-principal p {
