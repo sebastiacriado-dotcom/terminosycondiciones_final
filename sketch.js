@@ -183,14 +183,15 @@ function setup() {
     escribiendo  = true;
     ultimoTiempo = millis();
     // Desactivar hover de rechazar mientras aceptar está activo
- 
+    document.body.classList.add('aceptar-activo');
   });
   btnAceptar.addEventListener('mouseout', () => {
     escribiendo = false;
     progreso    = 0;
     activacion  = 0;
     // Reactivar hover de rechazar
- 
+    document.body.classList.remove('aceptar-activo');
+    resetUI();
   });
 
   setInterval(() => {
@@ -303,7 +304,7 @@ function resetUI() {
   btnAceptar.style.borderColor = 'black';
   btnRechazar.style.background  = 'white';
   btnRechazar.style.borderColor = 'white';
-  btnRechazar.style.opacity     = '1';
+  btnRechazar.style.opacity     = '';
   document.body.style.background = 'white';
   document.documentElement.style.background = 'white';
   tituloEl.style('color', 'white');
