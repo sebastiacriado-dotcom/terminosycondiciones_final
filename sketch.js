@@ -183,15 +183,14 @@ function setup() {
     escribiendo  = true;
     ultimoTiempo = millis();
     // Desactivar hover de rechazar mientras aceptar está activo
-    document.body.classList.add('aceptar-activo');
+ 
   });
   btnAceptar.addEventListener('mouseout', () => {
     escribiendo = false;
     progreso    = 0;
     activacion  = 0;
     // Reactivar hover de rechazar
-    document.body.classList.remove('aceptar-activo');
-    resetUI();
+ 
   });
 
   setInterval(() => {
